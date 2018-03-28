@@ -1,6 +1,7 @@
 # Webantic NodeJS + Meteor
 
-This image can be used for building Meteor based projects. As they output the relevent code on building there's no need to use this for deployment.
+This image is for building Meteor based projects.
+As they output the relevant code on building there's no need to use this for deployment.
 
 ## Deployment
 
