@@ -9,4 +9,6 @@ RUN npm -g install node-gyp
 USER node
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin
-RUN mkdir /home/node/app && meteor || :
+RUN	mkdir -p /home/node/app/.meteor/local
+WORKDIR /home/node/app
+RUN	meteor || :
