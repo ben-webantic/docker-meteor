@@ -5,6 +5,30 @@ As they output the relevant code on building there's no need to use this for dep
 
 ## Deployment
 
+### Docker-Compose
+
+```yaml
+services:
+  core:
+    build:
+      context: core
+      target: build
+      args:
+        - NPM_TOKEN
+    command: ["meteor", "-s", "settings.json", "--port", "3000", "--inspect=0.0.0.0:9229"]
+    environment:
+      DEBUG: project*
+      MONGO_URL: mongodb://mongo/meteor
+    ports:
+      - "3000:3000" # HTTP port
+      - "9229:9229" # Node debug port
+    volumes:
+      - ./core:/home/node/app
+      - core-meteor-local:/home/node/app/.meteor/local
+      - core-meteor-packages:/home/node/.meteor/packages
+      - core-node-modules:/home/node/app/node_modules
+```
+
 ### Dockerfile
 
 ```Dockerfile
