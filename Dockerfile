@@ -12,4 +12,3 @@ ENV PATH=$PATH:/home/node/.npm-global/bin
 RUN mkdir -p /home/node/app/.meteor/local
 WORKDIR /home/node/app
 RUN meteor || :
-VOLUME ["/home/node/app/.meteor"]
