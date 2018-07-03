@@ -36,13 +36,13 @@ services:
 
 FROM webantic/meteor:8 as build
 USER node
-WORKDIR /home/node/app
 ARG NPM_TOKEN
-COPY --chown=node .npmrc.deploy .npmrc
+COPY --chown=node .npmrc.deploy /home/node/.npmrc
+WORKDIR /home/node/app
 COPY --chown=node package*.json ./
 RUN npm set progress=false && npm install -s --no-progress
 VOLUME ["/home/node/app/node_modules/"]
-EXPOSE 9229
+EXPOSE 4229
 
 # Predeploy Image
 
