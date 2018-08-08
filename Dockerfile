@@ -11,6 +11,6 @@ WORKDIR /home/node/app
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$PATH:/home/node/.npm-global/bin:/home/node/.meteor
 RUN npm -g install node-gyp
-ARG METEOR_VERSION=1.7.0.3
+ARG METEOR_VERSION=1.7.0.4
 ENV METEOR_VERSION=${METEOR_VERSION}
 RUN curl https://install.meteor.com/?release=${METEOR_VERSION} | sh && meteor || :
