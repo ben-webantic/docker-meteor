@@ -1,8 +1,8 @@
-ARG NODE_VERSION=8.11.3
+ARG NODE_VERSION=8.11.4
 FROM node:${NODE_VERSION} as meteor
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-ARG NPM_VERSION=6.2.0
+ARG NPM_VERSION=6.4.0
 ENV NPM_VERSION=${NPM_VERSION}
 RUN npm -g install npm@${NPM_VERSION}
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
